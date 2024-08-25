@@ -24,7 +24,7 @@ bigfont = pygame.font.Font(None, 80)
 smallfont = pygame.font.Font(None, 45)
 
 def play_again():
-    # play again 이라고 하는 box를 출력
+    # play again 이라고 하는 box를 출력 -> 변경 필요
     text = bigfont.render('Play again?', 13, (0, 0, 0))
     textx = SCREEN_WIDTH / 2 - text.get_width() / 2
     texty = SCREEN_HEIGHT / 2 - text.get_height() / 2
@@ -52,7 +52,6 @@ def play_again():
                 pygame.quit()
                 quit()
             elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                print('마우스 클릭됨')
                 main()
 
                            
@@ -155,6 +154,7 @@ def main():
         enemy_rect.top = enemy_y_pos
 
         if character_rect.colliderect(enemy_rect):
+            # 실패화면 띄워야 함.
             play_again()
 
 
